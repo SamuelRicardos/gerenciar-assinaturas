@@ -15,7 +15,7 @@ class UI:
             [1] -> Adicionar assinatura
             [2] -> Remover assinatura
             [3] -> Valor total
-            [4] -> Gastos últimos 12 meses
+            [4] -> Gastos mensais
             [5] -> Sair
             ''')
             choice = int(input('Escolha uma opção: '))

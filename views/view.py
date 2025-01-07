@@ -105,7 +105,16 @@ class SubscriptionService:
         values_for_months = self._get_values_for_months(last_12_months)
         last_12_months = list(map(lambda x: x[0], self._get_last_12_months_native()))
 
-        import matplotlib.pyplot as plt
+        # print(values_for_months)
+        # print(last_12_months)
 
-        plt.plot(last_12_months, values_for_months)
+        import matplotlib.pyplot as plt
+        x_sorted, y_sorted = zip(*sorted(zip(last_12_months, values_for_months)))
+        plt.xlabel('Meses')
+        plt.ylabel('Valor Gasto (R$)')
+        plt.title('Gastos Mensais ao ano')
+        plt.plot(x_sorted, y_sorted)
         plt.show()
+
+# ss = SubscriptionService(engine)
+# print(ss.gen_chart())   
